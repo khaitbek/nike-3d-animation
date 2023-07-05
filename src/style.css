@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap");
+:root {
+  --bg-color: #1b1b1b;
+  --main-font: "Montserrat", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  font-family: var(--main-font);
+  background-color: var(--bg-color);
+}
+
+img {
+  display: block;
+  height: auto;
+  transition: all 0.75s ease-out;
+}
+
+button {
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+.site-main {
+  flex-grow: 1;
+}
+.container {
+  width: min(100%, 1240px);
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+.site-header {
+  padding-block: 40px;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.hero-wrapper {
+  display: flex;
+  justify-content: space-between;
+  grid-area: 3rem;
+}
+
+.hero-inner {
+  min-width: 518px;
+  margin-top: 343px;
+
+  color: white;
+  z-index: 10;
+
+}
+
+.page-title {
+  margin-bottom: 40px;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.page-title span {
+  --color-one: #f4ca02;
+  --color-two: #fafafa;
+  --bg-size:400%;
+  position: relative;
+  display: block;
+  font-size: 96px;
+  font-weight: 800;
+  background: linear-gradient(90deg,var(--color-one),var(--color-two),var(--color-one)) 0 0 / var(--bg-size) 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: move-bg 8s infinite linear;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 14px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 30px;
+  color: #000;
+}
+
+.btn-light {
+  background-color: #fafafa;
+}
+
+.btn-light:hover {
+  background-color: #d5d2d2;
+}
+
+.btn-light:active {
+  background-color: rgb(141, 139, 139);
+}
+.btn-yellow {
+  background-color: #f4ca02;
+}
+
+.btn-yellow:hover {
+  background-color: #b3970b;
+}
+
+.btn-yellow:active {
+  background-color: #86710a;
+}
+
+.menu-btn{
+  position: relative;
+  color: #fafafa;
+}
+.menu-btn img{
+  position: relative;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.menu-btn::before{
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -7px;
+  right: 0;
+  height: 60px;
+  padding: 3em;
+  background-color: none;
+  opacity: 0;
+  border-radius: 50%;
+  transition: opacity 300ms ease-in-out;
+  z-index: -10;
+}
+
+.menu-btn:hover{
+  color: #000;
+}
+
+.menu-btn:hover::before{
+  opacity: 1;
+  background-color: #fafafa;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-title span {
+    animation: move-bg 8s linear infinite;
+  }
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+}
